@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{% static 'myapp/js/jquery-3.0.0.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+    <script src=" {% static 'myapp/js/bootstrap.min.js' %}"></script>
+    <title>Document</title>
+</head>
+<body >
+        
+        <header>
+
+            
+            <div class="container">
+
+                <nav class="navbar navbar-inverse ">
+                            <div class="container-fluid">
+
+
+                                    <div class="navbar navbar-brand">
+
+                                        <span>WELE COME TO THERE!</span>
+
+                                    </div>
+
+
+
+                                    <div class="navbar-header">
+                                            
+                                            
+                                                         <button class="navbar-toggle" data-toggle="collapse" data-target="#shownav">
+                                                             <span class="icon-bar"></span>
+                                                             <span class="icon-bar"></span>
+                                                            <span class="icon-bar"></span>
+                                                         </button>
+                                    </div>
+
+
+
+                                    <ul class="nav navbar-nav navbar-right collapse navbar-collapse" id ="shownav">
+                                            
+                                            <li id ="index">
+                                            <a href="{% url 'myapp:index' %}"> 首页 </a>
+                                            </li>
+
+                                            <li id="release">
+                                            <a href="{% url 'myapp:create_article' %}">发布</a>
+                                            
+                                            </li>
+
+                                            <li id = "register">
+
+                                                <a href="{% url 'myapp:register' %}">注册</a>
+
+                                            </li>
+
+                                            <li id ="login">
+
+                                                <a href="{% url 'myapp:logins' %}">登录</a>
+
+                                            </li>
+
+                                            <li >
+                                                <a href="{% url 'myapp:logouts' %}">登出</a>
+
+                                            </li>
+
+                                            <li>
+                                                <a href="{% url 'myapp:article_manage' %}">管理</a>
+                                            </li>
+
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">爬虫 <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="/translate/">翻译</a></li>
+                                                    <li><a href="https://github.com/Yog-Sothoth-whend3/taobao.git">爬淘宝</a></li>
+                                                    <li><a href="https://github.com/Yog-Sothoth-whend3/bilibili-coser_spiders.git">爬B站coser图片</a></li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li><a href="#">爬色站</a></li>
+                                                </ul>
+                                            </li>
+
+                                            <li class="navbar-text" ><p>欢迎：<a href="/userinfo/?usernames={{username}}">{{username}}</a></p> </li>
+                                            
+
+
+                                        </ul>
+
+                    </nav>
+
+
+
+
+                
+
+
+
+            </div>
+            
+        </header>
+
+        
+        {% block navbar %}
+        
+
+
+        
+        <main>
+
+
+            <div class="container">
+
+                    <div class="panel panel-default">
+
+                        {% for article in articles %}
+                        
+
+                            <div class="jumbotron" >
+                                    <h1> {{article.title}} </h1>
+                                    <p><a class="btn btn-primary btn-lg" href="/articles_by_id/{{article.pk}}/" role="button">Learn more</a></p>
+                            </div>
+
+                        
+
+
+                        {% endfor %}
+                            
+                        <div class="jumbotron" style="text-align:center">
+                                        <p><a class="btn btn-primary btn-lg" href="/create_article/" role="button"><span class="glyphicon glyphicon-plus-sign">添加下一篇文章</span></a></p>
+                                </div>
+                    </div>
+                    
+
+            </div>
+
+
+
+
+        </main>
+
+
+
+        {% endblock navbar  %}
+
+
+       
+    
+        </footer>
+    
+    
+
+
+
+
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,127 @@
+{% extends 'myapp/index.html' %}
+{% load static %}
+
+
+
+
+{% block navbar %}
+
+<script src=" {% static 'myapp/js/translate.js' %}"></script>
+<main>
+
+    <div class = "container">
+    
+    
+        <div class="panel panel-success">
+
+
+            <div class="panel panel-heading">翻译单词(提示:耐心等待响应)</div>
+
+            <div class="panel panel-body">
+
+
+            
+
+                <div class="form form-group">
+
+                        <textarea class="form-control" rows="8" id ='context_word'></textarea>
+
+                </div>
+
+
+                <div style="text-align:center">
+
+                        <button id = "word_button"><span class="glyphicon glyphicon-sort"></span></button>
+
+                </div>
+
+
+
+                <div class="form form-group">
+
+                    <textarea class="form-control" rows="8" id = "word_context"></textarea>
+
+                </div>
+
+               
+
+
+            </div>
+
+
+        </div>
+    
+    
+    
+    
+    
+    
+         <div class="panel panel-success">
+
+
+            <div class="panel panel-heading">翻译句子(或许有点慢,见谅)</div>
+
+            <div class="panel panel-body">
+
+
+            
+
+                <div class="form form-group">
+
+                        <textarea class="form-control" rows="8" id ='context_sentence'></textarea>
+
+                </div>
+
+
+                <div style="text-align:center">
+
+                        <button id = "sentence_button"><span class="glyphicon glyphicon-sort"></span></button>
+
+                </div>
+
+
+
+
+                <div class="form form-group">
+
+                    <textarea class="form-control" rows="8" id = "setence_context"></textarea>
+
+                </div>
+
+               
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+{% endblock navbar %}
+
+
+
+

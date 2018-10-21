@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{% static 'myapp/js/jquery-3.0.0.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+    <script src=" {% static 'myapp/js/bootstrap.min.js' %}"></script>
+    <script>$(document).ready(function(){
+
+        function redirect (){
+            var url = '/register/';
+            location.href = url;
+    
+    
+       
+            
+        }
+    
+        setTimeout(redirect,3000);
+    
+    
+    
+    })</script>
+    <title>result</title>
+</head>
+<body>
+    <p>{{mean}}</p>
+    <p>3秒后转跳至注册界面.....</p>
+    <p><a href="{% url 'myapp:register' %}">或点击此处</a></p>
+</body>
+</html>
